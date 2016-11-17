@@ -1,5 +1,5 @@
 /*
-* Author: Kinara
+* Author: lorraine kupa
 */
 
 #include<iostream>
