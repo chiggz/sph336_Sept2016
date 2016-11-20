@@ -11,7 +11,7 @@ In the following truth table, the output out0 is high when the inputs in1 and in
 Only one signal is high(selected) when the right binary number is available on the input. <br>
 Its truth table: 
 <p align="left">
-  <img src="2by4 decoder_truth_table.png" width="250"/>
+  <img src="2by4decoder_truth_table.png" width="250"/>
 </p>
 
 ###Circuit:
@@ -29,5 +29,4 @@ Traced signals timing diagram:
 <p align="left">
   <img src="timing_diagram.png" width="400"/>
 <p>
-
 
