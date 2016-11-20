@@ -1,9 +1,3 @@
-/*
- * decoder_2by4.h
- *
- *  
- *      
- */
 
 #ifndef DECODER_2BY4_H_
 #define DECODER_2BY4_H_

@@ -1,9 +1,3 @@
-/*
- * driver2by4.h
- *
- *  Created on: Oct 6th, 2016
- *      Author: Dominic
- */
 
 #ifndef DRIVER4_H_
 #define DRIVER4_H_

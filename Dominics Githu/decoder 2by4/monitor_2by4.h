@@ -1,9 +1,3 @@
-/*
- * monitor2by4.h
- *
- *  
- *      
- */
 
 #ifndef MONITOR4_H_
 #define MONITOR4_H_

@@ -1,9 +1,4 @@
-/*
- * decoder_2by4.cc
- *
- *  Created on: Nov 2016
- *      Author: Dominic
- */
+
 #include"decoder_2by4.h"
 #include"driver_2by4.h"
 #include"monitor_2by4.h"

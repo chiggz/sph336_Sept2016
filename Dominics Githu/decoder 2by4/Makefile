@@ -1,6 +1,3 @@
-#      Makefile
-#      Created on: Nov 13, 2016
-#      Author: Dominic
 
 GTKWAVE := $(shell which gtkwave)
 
