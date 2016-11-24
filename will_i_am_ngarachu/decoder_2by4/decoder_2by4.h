@@ -9,7 +9,7 @@ SC_MODULE(decoder2){
 //input and output ports
 sc_in<bool> x, y;
 sc_out<bool> q, r, s, t;
-sc_signal<bool> s1, s2, s3, s4, out1, out2, out3, out4;
+sc_signal<bool> s1, s2, s3, s4;
 
 
 
@@ -30,8 +30,7 @@ SC_CTOR(decoder2){
 	dec2_ptr->b (s3);
 	dec2_ptr->c (s4);
 
-	SC_METHOD(decode2);
-	sensitive<<x<<y;
+
 
 	SC_METHOD(prc_add1);
 	sensitive<<s1<<s3;
@@ -50,26 +49,19 @@ SC_CTOR(decoder2){
 }
 
 void prc_add1 () {
-	out1 = s1 && s3;
+	q = s1 && s3;
 }
 
 void prc_add2 () {
-	out2 = s1 && s4;
+	r = s1 && s4;
 
 }
 void prc_add3 () {
-	out3 = s2 && s3;
+	s = s2 && s3;
 }
 
 void prc_add4 () {
-	out4 = s2 && s4;
-}
-
-void decode2(void){
-	q=out1;
-	r=out2;
-	s=out3;
-	t=out4;
+	t = s2 && s4;
 }
 
 

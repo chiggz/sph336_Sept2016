@@ -1,8 +1,7 @@
 /*
 * Author: ule msee
 */
-#ifndef DECODER_1BY2_H_
-#define DECODER_1BY2_H_
+
 #include<systemc.h>
 
 SC_MODULE(decoder){
@@ -30,4 +29,3 @@ void decode(void){
 
 
 
-#endif /* DECODER_1BY2_H_ */

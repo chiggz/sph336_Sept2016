@@ -51,8 +51,9 @@ sc_trace(tf, out4, "input_is_one_and_one");
 
 //run a simulation for 40 systemc nano-seconds
 if( !sc_pending_activity() )
-sc_start(25,SC_NS);
+sc_start(20,SC_NS);
 //close the trace file
+cout<<"argv[1]: "<<atoi(argv[1])<<endl;
 sc_close_vcd_trace_file(tf);
 return 0;
 }
