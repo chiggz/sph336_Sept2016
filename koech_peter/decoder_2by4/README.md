@@ -1,9 +1,7 @@
-This is a 2-by-4 decoder example, which is a makefile project and so no need for an IDE. 
-Just cd into this folder and run the command 
+This is a 2-by-4 decoder, which is a makefile project.
+Open terminal and cd into the folder containing these files for decoder_2by4 and run the following command " make decoder
 
-    make decoder
-
-
+2-by-4 decoder is a line decoder.
 A line decoder is a device that changes the input code into a set of signals.<br>
 It takes an n-digit binary number and decodes it into 4<sup>n</sup> data lines.
 It does the reverse of encoding. <br>
@@ -11,12 +9,12 @@ In the following truth table, the output D0 is high when both inputs are zero,  
 <br>
 Its truth table: 
 <p align="left">
-  <img src="truth_table.png" width="1152"/>
+  <img src="Truth table.png" width="1152"/>
 </p>
 
 ###Circuit:
 <p align="left">
-  <img src="circuit.gif" width="462"/>
+  <img src="Circuit.png" width="462"/>
 </p>
 
 Model of computation:
@@ -27,7 +25,7 @@ Results:
 The above MOC was implemented in systemc (code in this folder) and the following output found from traced signals.<br>
 Traced signals timing diagram:
 <p align="left">
-  <img src="timing_diagram.png" width="1600"/>
+  <img src="Timing diagram.png" width="1600"/>
 <p>
 
 
