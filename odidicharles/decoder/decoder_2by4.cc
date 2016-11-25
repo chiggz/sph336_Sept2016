@@ -1,7 +1,7 @@
 /*
  *decoder_2by4.cc
  *  Created on: Oct 28, 2016
- *      Author: karibe
+ *      Author: odidi
  */
 #include"decoder_2by4.h"
 #include"driver.h"
@@ -41,15 +41,15 @@ tf->set_time_unit(1, SC_NS);
 //trace the signals interconnecting modules
 sc_trace(tf, in1, "binary_input"); // signals to be traced
 sc_trace(tf, in2, "input_is_zero");
-sc_trace(tf, out1, "input_is_one");
-sc_trace(tf, out2, "input_is_zero");
-sc_trace(tf, out3, "input_is_one");
-sc_trace(tf, out4, "input_is_zero");
+sc_trace(tf, out1, "out1");
+sc_trace(tf, out2, "out2");
+sc_trace(tf, out3, "out3");
+sc_trace(tf, out4, "out4");
 
 //run a simulation for 20 systemc nano-seconds
 if( !sc_pending_activity() )
-sc_start(25,SC_NS);
-//close the trace file
+sc_start(20,SC_NS);
+//close the trace file 
 sc_close_vcd_trace_file(tf);
 return 0;
 }

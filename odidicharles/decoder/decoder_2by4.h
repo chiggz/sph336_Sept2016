@@ -1,39 +1,50 @@
-
-/*
- * decoder_2by4.h
- *
- *  Created on: Oct 28, 2016
- *      Author: karibe
- */
-
-#ifndef DECODER_2BY4_H_
-#define DECODER_2BY4_H_
 #include<systemc.h>
+#include "decoder_1by2.h"
 
-SC_MODULE(decoder){
-//input and output ports
-sc_in<bool> a,b;
-sc_out<bool> c,d,e,f;
-//constructor: where the processes are bound to simulation kernel
-SC_CTOR(decoder){
-	SC_METHOD(decode);
-	sensitive<<a<<b;
-	//dont_initialize();
+SC_MODULE (two_by_four){
+
+	sc_in<bool> a,b;
+	sc_out<bool>c, d, e, f;
+	sc_signal<bool> s1,s2,s3,s4;
+
+	decoder *dec1_ptr, *dec2_ptr;
+
+SC_CTOR (two_by_four){
+	
+	dec1_ptr = new decoder("dec1");
+		dec1_ptr -> a (a);
+		dec1_ptr -> b(s1);
+		dec1_ptr -> c(s2);
+	dec2_ptr = new decoder("dec2");
+		dec2_ptr -> a (b);
+		dec2_ptr -> b (s3);
+		dec2_ptr -> c (s4);
+
+SC_METHOD (prc_one);
+	sensitive<<s1<<s3;
+SC_METHOD(prc_two);
+	sensitive<<s1<<s4;
+SC_METHOD(prc_three);
+	sensitive<<s2<<s3;
+SC_METHOD(prc_four);
+	sensitive<<s2<<s4;
+
+}
+//deconstructor
+~two_by_four(){
+
+}
+void prc_one(){
+	c = s1 && s3;
+}
+void prc_two(){
+	d = s1 && s4;
+}
+void prc_three(){
+	e = s2 && s3;
+}
+void prc_four(){
+	f = s2 && s4;
 }
 
-~decoder(){
-//delete stuff :P
-}
-
-void decode(void){
-	c=(a==0 && b==0)?1:0;
-	d=(a==0 && b==1)?1:0;
-        e=(a==1 && b==0)?1:0;
-        f=(a==1 && b==1)?1:0;
-}
 };
-
-
-
-
-#endif /* DECODER_2BY4_H_ */

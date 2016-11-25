@@ -2,11 +2,9 @@
  * monitor.h
  *
  *  Created on: Oct 28, 2016
- *      Author: karibe
+ *      Author: odidi
  */
 
-#ifndef MONITOR_H_
-#define MONITOR_H_
 #include<iostream>
 #include<systemc>
 
@@ -25,4 +23,4 @@ void monita(void){
 cout<<"at "<<sc_time_stamp()<<" input is: "<<m_a<<" and "<<m_b<<" outputs are: "<<m_c<<" and "<<m_d<<" and "<<m_e<<" and "<<m_f<<endl;
 }
 };
-#endif /* MONITOR_H_ */
+

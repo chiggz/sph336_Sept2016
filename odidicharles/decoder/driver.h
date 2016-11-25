@@ -5,8 +5,6 @@
  *      Author: odidi
  */
 
-#ifndef DRIVER_H_
-#define DRIVER_H_
 
 #include<systemc>
 
@@ -34,4 +32,4 @@ void drive(void){
 	}
 }
 };
-#endif /* DRIVER_H_ */
+
