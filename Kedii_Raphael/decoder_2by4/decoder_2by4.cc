@@ -5,7 +5,7 @@
 */
 
 
-#include"decoder0_2by4.h"
+#include"decoder_2by4.h"
 #include"driver3.h"
 #include"monitor3.h"
 #include<systemc.h>

@@ -27,7 +27,7 @@ Results:
 The above MOC was implemented in systemc (code in this folder) and the following output found from traced signals.<br>
 Traced signals timing diagram:
 <p align="left">
-  <img src="timing_diagram.png" width="400"/>
+  <img src="timing_diagram.vcd" width="400"/>
 <p>
 
 
