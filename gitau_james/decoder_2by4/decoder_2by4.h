@@ -1,50 +1,68 @@
-/*
-     #Created on: Nov 15, 2016
-            #Author: GITAU JAMES
-    #Decoder module
-*/
-
-
+// Author:Gitau James
 #include<systemc.h>
+#include "decoder_1by2.h"
 
-SC_MODULE(decoder){
-	//input and output ports
-	sc_in<bool>d_a,d_b;
-	sc_out<bool>d_c,d_d,d_e,d_f;
-	//constructor:where the processes are bound to simulation kernel
-	SC_CTOR(decoder){
-		SC_METHOD(decode);
-		sensitive<<d_a<<d_b;//sensitive to i0 and i1 which are the inputs
-		//dont initialize
+SC_MODULE(decoder2){
+//input and output ports
+sc_in<bool> x, y;
+sc_out<bool> s, t, u, v;
+sc_signal<bool> signal1, signal2, signal3, signal4;
 
-	}
-	~decoder(){
-		//delete stuff :P
-	}
-	void decode(void){
-		if(d_a==0 && d_b==0){
-			d_c=1;
-			d_d=0;
-			d_e=0;
-			d_f=0;
-		}
-		else if(d_a==0 && d_b==1){
-			d_c=0;
-			d_d=1;
-			d_e=0;
-			d_f=0;
-			}
-			else if(d_a==1 && d_b==0){
-			d_c=0;
-			d_d=0;
-			d_e=1;
-			d_f=0;
-			}
-			else if(d_a==1 && d_b==1){
-			d_c=0;
-			d_d=0;
-			d_e=0;
-			d_f=1;
-			}
-	}
+
+//pointers
+decoder *dec1_ptr, *dec2_ptr;
+
+
+//constructor:
+SC_CTOR(decoder2){
+
+	dec1_ptr = new decoder ("dec1");
+	dec1_ptr->a (x);
+	dec1_ptr->b (signal1);
+	dec1_ptr->c (signal2);
+
+	dec2_ptr = new decoder ("dec2");
+	dec2_ptr->a (y);
+	dec2_ptr->b (signal3);
+	dec2_ptr->c (signal4);
+
+
+
+	SC_METHOD(prc_add1);
+	sensitive<<signal1<<signal3;
+	SC_METHOD(prc_add2);
+	sensitive<<signal1<<signal4;
+	SC_METHOD(prc_add3);
+	sensitive<<signal2<<signal3;
+	SC_METHOD(prc_add4);
+	sensitive<<signal2<<signal4;
+
+}
+
+//destructor
+~decoder2(){
+
+}
+
+//and gates
+void prc_add1 () {
+	s = signal1 && signal3;
+}
+
+void prc_add2 () {
+	t = signal1 && signal4;
+
+}
+void prc_add3 () {
+	u = signal2 && signal3;
+}
+
+void prc_add4 () {
+	v = signal2 && signal4;
+}
+
+
 };
+
+
+
