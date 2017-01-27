@@ -1,23 +1,23 @@
 /*
-     #Created on: Nov 12, 2016
-            #Author: kedii Raphael(I39/2291/2015)
-    #monitor module
+* Author: Kedii raphael
 */
-#ifndef MONITOR_H_
-#define MONITOR_H_
 
 #include<iostream>
 #include<systemc>
+
 using namespace std;
+
 SC_MODULE(monitor){
-	sc_in<bool>m_a,m_b,m_c,m_d,m_e,m_f;
-	SC_CTOR(monitor){
+sc_in<bool> ma, mb, mc, md, me, mf;
+
+SC_CTOR(monitor){
 	SC_METHOD(monita);
-	sensitive<<m_b<<m_c<<m_d<<m_e;
+	sensitive<<mc<<md<<me<<mf;
 	dont_initialize();
-	}
-	void monita(void){
-		cout<<"at"<<sc_time_stamp()<<"input are:"<<m_a<<"-"<<m_f<<"outputs are:"<<m_b<<"-"<<m_c<<"-"<<m_d<<"-"<<m_e<<endl;
-	}
+}
+
+void monita(void){
+cout<<"at "<<sc_time_stamp()<<" inputs are: "<<ma<<" and "<<mb<<" outputs are: "<<mc<<" and "<<md<<" and "<<me<<" and "<<mf<<endl;
+}
 };
-#endif
+
